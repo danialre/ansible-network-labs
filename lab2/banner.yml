@@ -5,10 +5,12 @@
   gather_facts: no
 
   vars:
-    banner_message: Sirius Immersion Days are Super Fun and Cool!!!!
+    banner_message: Do not dumb here. Not dumb area here
 
   tasks:
   - name: "Update banner message to '{{ banner_message }}'"
-    ios_config:
-      lines:
-        - "banner motd % {{ banner_message }} %"
+#    ios_config:
+#      lines: 
+#        - "banner motd % {{ banner_message }} %"
+    cli_config:
+      config: "banner motd % {{ banner_message }} %"
